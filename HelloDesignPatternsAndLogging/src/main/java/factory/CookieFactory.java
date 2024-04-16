@@ -23,16 +23,22 @@ public class CookieFactory {
 
         //control flow to determine what kind of cookie will be returned
         if(cookieType.equals("Chocolate Chip")){
+            LOGGER.info("Chocolate Chip was chosen by the user");
             return new ChocolateChip();
         }
 
         if(cookieType.equals("Oatmeal Raisin")) {
+            //I don't like Oatmeal Raisin cookies, so I'll make this a WARN level, because it may be harmful
+            LOGGER.warn("Oatmeal Raisin was chosen by the user... yuck");
             return new OatmealRaisin();
         }
 
         if(cookieType.equals("Ginger Snap")){
+            LOGGER.info("Ginger Snap was chosen by the user");
             return new GingerSnap();
         }
+
+        LOGGER.warn("The user inserted an invalid type");
 
         //if there is no match, return null
         return null;

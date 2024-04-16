@@ -1,3 +1,9 @@
 12:31:11.396 [main] INFO  factory.CookieFactory - Baking a Cookie!!
 12:31:11.410 [main] INFO  factory.CookieFactory - Baking a Cookie!!
 12:31:11.412 [main] INFO  factory.CookieFactory - Baking a Cookie!!
+14:11:16.140 [main] INFO  factory.CookieFactory - Baking a Cookie!!
+14:11:16.148 [main] INFO  factory.CookieFactory - Chocolate Chip was chosen by the user
+14:11:16.159 [main] INFO  factory.CookieFactory - Baking a Cookie!!
+14:11:16.159 [main] WARN  factory.CookieFactory - Oatmeal Raisin was chosen by the user... yuck
+14:11:16.161 [main] INFO  factory.CookieFactory - Baking a Cookie!!
+14:11:16.162 [main] INFO  factory.CookieFactory - Ginger Snap was chosen by the user
