@@ -1,3 +1,4 @@
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,6 +42,10 @@ public class Main {
         //We skip the first 3 values (skip - intermediate)
         //FOR EACH value in the stream, print the value (forEach - terminal)
 
+        //Let's do the same stream as above, but using method reference syntax in the forEach
+        IntStream.range(1,10).skip(3).forEach(System.out::println);
+        //method reference syntax (::) lets us skip naming a variable and skip the definition of a lambda
+
         //Stream.of() is a convenient method we can use to define whatever we want in a Stream
         //The data must be of the same type
         Stream.of("Okay", "Ummmm", "Ben", "Revature", "124123872319", "yep")
@@ -80,10 +85,24 @@ public class Main {
         //This is also an example of Optionals in an Int context!
         OptionalInt reducedInt = IntStream.range(1, 11)
                 .map(x -> x * x * x) //map lets us apply some function to each element (intermediate, unlike forEach)
-                .reduce((x, y) -> x + y); //reduce will combine all the elements into one value (terminal)
+                .reduce((total, y) -> total + y); //reduce will combine all the elements into one value (terminal)
                     //in this case, we're using reduce() to sum up all the cubed numbers
+                    //basically, the left number will be added to the right number, until there is only one left.
 
-        System.out.println(reducedInt.getAsInt());
+
+        if(reducedInt.isPresent()){
+            System.out.println(reducedInt.getAsInt());
+        } else {
+            System.out.println("The stream is empty!"); //instead of Throwing NullPointerException
+        }
+
+
+        //quick example of using Reflection API
+        Class<Thread> threadClass = Thread.class;
+
+        for(Method m : threadClass.getDeclaredMethods()){
+            System.out.println(m.getName());
+        }
 
     } //end of main
 
