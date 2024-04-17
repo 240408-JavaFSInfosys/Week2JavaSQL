@@ -25,7 +25,6 @@ public class InterfaceThread implements Runnable{
                 e.printStackTrace(); //print the error message
             }
 
-
         }
 
     }
